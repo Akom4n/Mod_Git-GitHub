@@ -25,7 +25,9 @@ COMANDOS PARA CONFIGURAR IDENTIFICAÇÃO NO GIT:
     Para configurar nome: git config --global user.name "Akom4n"
     Para configurar email: git config --global user.email "xdenik13@gmail.com" //usado normalmente o email do github
     Ver o que está configurado: git config --list
+    Verificando o histórico de versões: git log / Listagem resumida dos commits: git log --oneline
 
+    
 
 CONFIGURAR CHAVE SSH PARA O GITHUB:
 
@@ -56,3 +58,18 @@ INICIANDO UM REPOSITORIO PARA O GITHUB DA SUA MAQUINA:
     git branch -M main
     git remote add origin git@github.com:Akom4n/Mod_Git-GitHub.git
     git push -u origin main
+
+COMANDOS PARA O USO DO GIT BASH
+
+    Sobre o Git status/git add e stage:
+
+    modified: Arquivo modificado / untracked: Arquivo novo que você ainda não salvou / deleted: Arquivos que foram deletados
+
+    staged 
+
+    commited
+
+    git reset: volta para o estado que estava antes do stage
+
+    Git diff:
+        Comando que mostra a diferença entre arquivos modificados //Dica: utilizar o VS Code, que mostra graficamente as diferenças. 
