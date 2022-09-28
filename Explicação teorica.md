@@ -69,7 +69,65 @@ COMANDOS PARA O USO DO GIT BASH
 
     commited
 
-    git reset: volta para o estado que estava antes do stage
+    git reset: volta para o estado que estava antes do stage(Removendo da area de stage)
 
     Git diff:
         Comando que mostra a diferença entre arquivos modificados //Dica: utilizar o VS Code, que mostra graficamente as diferenças. 
+    
+    Git checkout:
+        Permite modificar temporariamente os arquivos do projeto ao estado de um dado commit ou branch
+
+        Código do commit, HEAD
+            Cada commit possui um código, que pode ser utilizado para referenciar o commit
+            O último commit do histórico do branch corrente também pode ser referenciado pela palavra HEAD
+            É possivel referenciar um commit N versões antes de HEAD usando ~N, por exemplo:
+                HEAD~1 (penúltimo commit)
+                HEAD~2 (antepenúltimo commit)
+        
+        IMPORTANTE: antes de fazer o checkout para voltar para HEAD, certifique-se que não haja mudanças nos arquivos. Se você acidentalmente mudou alguma coisa, desfaça as modificações usando:
+            git reset
+            git clean -df
+            git checkout -- .
+
+    Como desfazer o último commit:
+        Desfazer o último commit sem desgazer as modificações nos arquivos:
+
+            git status
+            git reset --soft HEAD~1
+
+SOBRE .GITIGNORE:
+
+    É um arquivo que indica o que não deve ser salvo pelo Git
+
+    Geralmente o arquivo .gitignore fica salvo na pasta principal do repositório. Mas também é possível salvar outros arquivos .gitignore em subpastas do repositório, para indicar o que deve ser ignorado por cada subpasta.
+
+    CASOS COMUNS DE ARQUIVOS QUE NÃO DEVEM SER SALVOS PELA GIT:
+
+        Arquivos compilados: Linguagens compiladas (C, C++, JAVA, C#, etc.) geram arquivos de código compilado para executar o programa localmente.
+
+    ARQUIVOS DE BIBLIOTECAS EXTERNAS USADAS NO PROJETO:
+       
+        Projetos reais utilizam bibliotecas externas (programas prontos disponíveis na internet). Por exemplo, projetos JavaScript com NPM tipicamente salvam uma subpasta "node_modules" na pasta do seu projeto.
+    
+    ARQUIVOS DE CONFIGURAÇÃO DA SUA IDE
+
+        IDE's podem salvar uma subpasta com arquivos de configuração na pasta do projeto (Exemplo: .vscode).
+
+    ARQUIVOS DE CONFIGURAÇÃO DO SEU SISTEMAS
+
+        Por exemplo, sistemas Mac podem gravar uma subpasta .ds_store na pasta do projeto
+
+O QUE FAZER QUANDO ABRE O EDITOR VIM:
+
+    Estas ações podem abrir o editor VIM no terminal:
+        Fazer um commit sem mensagem 
+        Fazer um merge de três vias
+
+    Habilitar o modo de edição: i
+
+    Sair do VIM, salvando as alterações: <ESC> :wq <ENTER>
+
+    Sair do VIM, descartando as alterações: <ESC> :q! <ENTER>
+
+    
+
