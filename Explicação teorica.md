@@ -58,6 +58,7 @@ INICIANDO UM REPOSITORIO PARA O GITHUB DA SUA MAQUINA:
     git branch -M main
     git remote add origin git@github.com:Akom4n/Mod_Git-GitHub.git
     git push -u origin main
+ 
 
 COMANDOS PARA O USO DO GIT BASH
 
@@ -95,6 +96,40 @@ COMANDOS PARA O USO DO GIT BASH
             git status
             git reset --soft HEAD~1
 
+    Como deletar commits e também modificações nos arquivos:
+
+        Voltar o projeto ao estado de um dado commit (deletar commits e alterações posteriores a essse commit)
+
+            git status
+            git reset --hard <código do commit>
+
+        Voltar o projeto ao estado do penúltimo commit:
+
+            git status
+            git reset --hard HEAD~1 
+
+            //ATENÇÃO: Ação destrutiva!
+    
+    Como atualizar o repositório local em relação ao remoto:
+
+        git status
+        git pull <nome do remote> <nome do branch>
+    
+    Como resolver push rejeitado:
+
+        Não é permitido enviar um push se seu repositório local está atrasado em relação ao histórico do repositório remoto! Por exemplo:
+
+            No GitHub: e8aab78 > 38k2ane > c9g57ef
+
+            No seu computador: e8aab78 > 38k2ane > c9g57ef > a47gc29 > 33p8724
+
+        Você tem que atualizar o repositório local:
+            git pull <nome do remote> <nome do branch>
+
+    Como sobrescrever um histórico no GitHub:
+
+        git push -f <nome do remote> <nome do branch> //Ação destrutiva   
+        
 SOBRE .GITIGNORE:
 
     É um arquivo que indica o que não deve ser salvo pelo Git
@@ -129,5 +164,10 @@ O QUE FAZER QUANDO ABRE O EDITOR VIM:
 
     Sair do VIM, descartando as alterações: <ESC> :q! <ENTER>
 
+COMO APONTAR O PROJETO PARA OUTRO REPOSITÓRIO REMOTO
+
+    git remote set-url origin git@github.com:seuusuario/seurepositorio.git
+
+    Para verificar o remote: git remote -v
     
 
